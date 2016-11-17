@@ -3,7 +3,7 @@ package com.impnet.model;
 import java.util.Date;
 
 public class Calendario extends Foto {
-	private static final float PRECO_UNITARIO_CALENDARIO =  5.00f;
+	public static final float PRECO_UNITARIO_ =  5.00f;
 	private int numeroPaginas;
 	private Date periodoInicial;
 	private Date periodoFinal;
@@ -20,7 +20,7 @@ public class Calendario extends Foto {
 	}
 
 	public static float getPrecoUnitarioCalendario() {
-		return PRECO_UNITARIO_CALENDARIO;
+		return PRECO_UNITARIO;
 	}
 	
 	public int getNumeroPaginas() {
@@ -49,9 +49,14 @@ public class Calendario extends Foto {
 
 	@Override
 	public String toString() {
-		return "Calendario [numeroPaginas=" + numeroPaginas + ", periodoInicial=" + periodoInicial + ", periodoFinal="
-				+ periodoFinal + "," + super.toString() + "]";
+		return "Calendario - Numero Paginas = " + numeroPaginas + "\n Periodo Inicial = " + periodoInicial + "\n Periodo Final = "
+				+ periodoFinal + "\n" + super.toString();
 	}
 
+public float calculoPreco(float preco){
+		
+		return preco*getNumeroCopias()*getNumeroPaginas();
+		
+	}
 	
 }

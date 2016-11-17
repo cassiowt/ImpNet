@@ -58,8 +58,8 @@ public class Foto {
 	@Override
 	public String toString() {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-		return "Foto codigo =" + codigo + "\n Número de Copias =" + numeroCopias + "\n Data Entrega =" + sdf.format(dataEntrega)
-				+ "\n Data Pedid o=" + sdf.format(dataPedido) +"\n Preço Unitario Foto = "+ PRECO_UNITARIO  +"\n";
+		return "Foto codigo = " + codigo + "\n Número de Copias = " + numeroCopias + "\n Data Entrega = " + sdf.format(dataEntrega)
+				+ "\n Data Pedido = " + sdf.format(dataPedido) +"\n Preço Unitario Foto = R$ "+ PRECO_UNITARIO  +"\n";
 	}	
 
 	public float calculoPreco(float preco){
