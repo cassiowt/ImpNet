@@ -1,10 +1,11 @@
 package com.impnet.model;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Foto {
 	private int codigo;
-	private static final float PRECO_UNITARIO_FOTO =  10.00f;
+	public static final float PRECO_UNITARIO =  10.00f;
 	private int numeroCopias;
 	private Date dataEntrega;
 	private Date dataPedido;
@@ -27,7 +28,7 @@ public class Foto {
 	}
 
 	public static float getPrecoUnitarioFoto() {
-		return PRECO_UNITARIO_FOTO;
+		return PRECO_UNITARIO;
 	}
 	
 	public int getNumeroCopias() {
@@ -56,9 +57,16 @@ public class Foto {
 
 	@Override
 	public String toString() {
-		return "Foto [codigo=" + codigo + ", numeroCopias=" + numeroCopias + ", dataEntrega=" + dataEntrega
-				+ ", dataPedido=" + dataPedido +" Preço Unitario Foto= "+ PRECO_UNITARIO_FOTO  +"]";
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		return "Foto codigo =" + codigo + "\n Número de Copias =" + numeroCopias + "\n Data Entrega =" + sdf.format(dataEntrega)
+				+ "\n Data Pedid o=" + sdf.format(dataPedido) +"\n Preço Unitario Foto = "+ PRECO_UNITARIO  +"\n";
 	}	
 
+	public float calculoPreco(float preco){
+		
+		return preco*getNumeroCopias();
+		
+	}
+	
 
 }
