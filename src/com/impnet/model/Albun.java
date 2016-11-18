@@ -3,7 +3,7 @@ package com.impnet.model;
 import java.util.Date;
 
 public class Albun extends Foto {
-	private static final float PRECO_UNITARIO_ALBUN =  4.00f;
+	public static final float PRECO_UNITARIO =  4.00f;
 	private int numeroFotosAlbun;
 	
 	public Albun() {}
@@ -21,15 +21,16 @@ public class Albun extends Foto {
 		this.numeroFotosAlbun = numeroFotosAlbun;
 	}
 
-	public static float getPrecoUnitarioAlbun() {
-		return PRECO_UNITARIO_ALBUN;
-	}
 
 	@Override
 	public String toString() {
-		return "Albun [numeroFotosAlbun=" + numeroFotosAlbun + "," + super.toString() + "]";
+		return "Albun - numeroFotosAlbun=" + numeroFotosAlbun + "\n" + super.toString();
 	}
-	
-	
+		
+		public float calculoPreco(float preco){
+		
+		return preco*getNumeroCopias()*getNumeroFotosAlbun();
+		
+	}
 	
 }

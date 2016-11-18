@@ -10,7 +10,7 @@ Numero de copias
 Data da Entrega
 Data do Pedido.
 
-+ Calculo do Pre√ßo = numero de copias vezes o pre√ßo fixo de R$ 10.00
++ Calculo do PreÁo = numero de copias vezes o preÁo fixo de R$ 10.00
 
 //** Calend√°rios;
 Codigo.
