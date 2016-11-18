@@ -49,7 +49,8 @@ public class Calendario extends Foto {
 
 	@Override
 	public String toString() {
-		return "Calendario - Numero Paginas = " + numeroPaginas + "\n Periodo Inicial = " + periodoInicial + "\n Periodo Final = "
+		return "Calendario - Numero Paginas = " + numeroPaginas + "\n Periodo Inicial = "
+				+ periodoInicial + "\n Periodo Final = "
 				+ periodoFinal + "\n" + super.toString();
 	}
 
