@@ -17,7 +17,8 @@ public class aplicacao {
 		//calculoFoto();
 		//calculoCalendario();
 		//calculoAlbun() ;
-		calculoQuadro();
+		calculoAlbun();
+
 		
 	}
 
