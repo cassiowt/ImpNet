@@ -6,7 +6,7 @@ import java.util.Date;
 public class Foto {
 	private int codigo;
 	public static final float PRECO_UNITARIO =  10.00f;
-	private float precoProduto;
+	protected float precoProduto;
 	private int numeroCopias;
 	private Date dataEntrega;
 	private Date dataPedido;
