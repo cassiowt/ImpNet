@@ -6,6 +6,7 @@ import java.util.Date;
 public class Foto {
 	private int codigo;
 	public static final float PRECO_UNITARIO =  10.00f;
+	private float precoProduto;
 	private int numeroCopias;
 	private Date dataEntrega;
 	private Date dataPedido;
@@ -63,9 +64,17 @@ public class Foto {
 	}	
 
 	public float calculoPreco(float preco){
+		this.precoProduto = preco*getNumeroCopias(); 
+		return this.precoProduto; 
 		
-		return preco*getNumeroCopias();
-		
+	}
+
+	public float getPrecoProduto() {
+		return precoProduto;
+	}
+
+	public void setPrecoProduto(float precoProduto) {
+		this.precoProduto = precoProduto;
 	}
 	
 
