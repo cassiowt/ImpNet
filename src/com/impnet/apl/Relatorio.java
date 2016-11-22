@@ -17,7 +17,7 @@ public class Relatorio {
 
 	}
 
-	private static void relatorioFotos() throws ParseException {
+	private static void relatorioFotos() throws ParseException, MinhaExcecao {
 		Foto foto = new Foto(1, 1, sdf.parse("02/11/2016"), new Date());
 		Foto foto2 = new Foto(2, 1, sdf.parse("20/11/2016"), new Date());
 		Foto foto3 = new Foto(3, 10, sdf.parse("30/11/2016"), new Date());

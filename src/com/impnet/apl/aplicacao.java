@@ -14,18 +14,20 @@ public class aplicacao {
 	static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 	
 	public static void main(String[] args) throws ParseException {
-		//calculoFoto();
-		//calculoCalendario();
-		//calculoAlbun() ;
-		calculoAlbun();
-
-		
+	try {
+		calculoFoto();
+	} catch (MinhaExcecao e) {
+			System.out.println(e.getMessage());
+	}
+	//	calculoCalendario();
+	//	calculoAlbun() ;
+	//	calculoQuadro();
 	}
 
-	private static void calculoFoto() throws ParseException {
+	private static void calculoFoto() throws ParseException, MinhaExcecao {
 		Foto foto = new Foto(1, 2, sdf.parse("20/11/2016"),new Date());
 		System.out.println(foto);
-		System.err.println("Preço Total = R$ " + foto.calculoPreco(Foto.PRECO_UNITARIO));
+		System.err.println("Preço Total = R$ " + foto.calculoPreco(-1f));
 	}
 	
 	private static void calculoCalendario() throws ParseException {

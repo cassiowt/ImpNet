@@ -3,6 +3,9 @@ package com.impnet.model;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import com.impnet.apl.MinhaExcecao;
+
+
 public class Foto {
 	private int codigo;
 	public static final float PRECO_UNITARIO =  10.00f;
@@ -63,10 +66,13 @@ public class Foto {
 				+ "\n Data Pedido = " + sdf.format(dataPedido) +"\n";
 	}	
 
-	public float calculoPreco(float preco){
-		this.precoProduto = preco*getNumeroCopias(); 
+	public float calculoPreco(float preco) throws MinhaExcecao{
+		if (preco < 0) {
+			throw new MinhaExcecao(MensagensConstantes.PRECO_MENOR_ZERO);
+		} else {
+				this.precoProduto = preco*getNumeroCopias(); 
+		}
 		return this.precoProduto; 
-		
 	}
 
 	public float getPrecoProduto() {
