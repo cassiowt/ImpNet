@@ -1,0 +1,52 @@
+--- Criado por C�ssio
+
+Uma empresa prestadora de serviços de impressão pela internet trabalha com impressão de fotos, montagem de albuns, Calendários e Quadros.
+
+Cada um dos produtos tem caracteristicas distintas tal como:
+//** Impressão de fotos;
+Codigo
+Preço
+Numero de copias
+Data da Entrega
+Data do Pedido.
+
++ Calculo do Pre�o = numero de copias vezes o pre�o fixo de R$ 10.00
+
+//** Calendários;
+Codigo.
+Preço.
+Numero de copias.
+Numero de Paginas.
+Periodo Data Inicial.
+Periodo Data Final.
+Data da Entrega.
+Data do Pedido.
+
++ Calculo do Preço = numero de copias vezes o numero de paginas vezes o preço fixo de R$ 5.00
+
+//** Montagem de Albuns;
+Codigo.
+Preço.
+Numero de copias.
+Numero de Fotos no Albun.
+Data da Entrega.
+Data do Pedido.
+
++ Calculo do Preço = numero de copias vezes o numero de fotos do album vezes o preço fixo de R$ 4.00
+
+
+//** Quadros;
+Codigo.
+Preço.
+Tamanho.
+Data da Entrega.
+Data do Pedido.
+
++ Calculo do Preço = preço fixo * numero de copias;
+
+/**
+Monte um projeto em Java denominado ImpNet.
+Crie as classes de modelo utilizando os conceitos de herança e polimorfismo no no pacote com.impnet.model;
+
+Crie uma classe Aplicação no pacote com.impnet.apl, para calcular cada um dos tipos de produtos.
+*/
