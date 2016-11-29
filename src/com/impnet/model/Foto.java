@@ -19,7 +19,7 @@ public class Foto {
 	public Foto(int codigo, int numeroCopias, Date dataEntrega, Date dataPedido) {
 		this.codigo = codigo;
 		this.numeroCopias = numeroCopias;
-		this.dataEntrega = dataEntrega;
+		this.setDataEntrega(dataEntrega); 
 		this.dataPedido = dataPedido;
 	}
 
