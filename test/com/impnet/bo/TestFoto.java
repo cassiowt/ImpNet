@@ -1,8 +1,8 @@
-package com.net.bo;
+package com.impnet.bo;
 
 import java.text.SimpleDateFormat;
 
-import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -45,10 +45,10 @@ public class TestFoto {
 		Assert.assertEquals(100,foto.getPrecoProduto(),0);
 	}
 
-	@After
-	public void tearDown() throws Throwable {
-		System.out.println("Liberado Objeto");
-		finalize();
+	@AfterClass
+	public static void tearDown() throws Throwable {
+		System.out.println("Testes Encerrados " );
+		
 	}
 
 }
