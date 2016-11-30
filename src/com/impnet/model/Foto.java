@@ -21,6 +21,7 @@ public class Foto {
 		this.numeroCopias = numeroCopias;
 		this.setDataPedido(dataPedido);
 		this.setDataEntrega(dataEntrega);
+		this.dataPedido = dataPedido;
 	}
 
 	public int getCodigo() {

@@ -1,12 +1,13 @@
 package com.impnet.apl;
 
-import java.util.Date;
+import com.impnet.model.MensagensConstantes;
 
 public class MinhaExcecao extends Exception {
 
 	private static final long serialVersionUID = -8831323060932900491L;
-//"Erro do meu programa " + new Date() + " " +
+
 	public MinhaExcecao(String msg) {
-		super(msg);
+		super(MensagensConstantes.MSG_EXCEPTION + msg);
+
 	}
 }

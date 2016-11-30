@@ -2,6 +2,8 @@ package com.impnet.model;
 
 import java.util.Date;
 
+import com.impnet.apl.MinhaExcecao;
+
 public class Albun extends Foto {
 	public static final float PRECO_UNITARIO = 4.00f;
 	private int numeroFotosAlbun;
@@ -27,12 +29,13 @@ public class Albun extends Foto {
 		return "Albun - numeroFotosAlbun=" + numeroFotosAlbun + "\n" + super.toString();
 	}
 
-	public float calculoPreco(float preco) {
-		   
-		super.precoProduto= preco * getNumeroCopias() * getNumeroFotosAlbun(); 
-		
-		return  super.getPrecoProduto();
-
+	public float calculoPreco(float preco) throws MinhaExcecao {
+		if (preco > 0) {
+			super.precoProduto = preco * getNumeroCopias() * getNumeroFotosAlbun();
+		} else {
+			throw new MinhaExcecao(MensagensConstantes.PRECO_MENOR_ZERO);
+		}
+		return super.getPrecoProduto();
 	}
 
 }

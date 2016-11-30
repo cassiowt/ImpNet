@@ -12,8 +12,14 @@ public class Relatorio {
 	static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
 	public static void main(String[] args) throws ParseException {
-		//relatorioFotos();
-		relatorioAbuns();
+		try {
+			relatorioFotos();
+			relatorioAbuns();
+		} catch (MinhaExcecao e) {
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+		}
+		
 
 	}
 
@@ -32,11 +38,11 @@ public class Relatorio {
 		fotos.add(foto3);
 
 		for (Foto f : fotos) {
-			System.out.println(f + "Preço: " + f.getPrecoProduto());
+			System.out.println(f + "Preï¿½o: " + f.getPrecoProduto());
 		}
 	}
 
-	private static void relatorioAbuns() throws ParseException {
+	private static void relatorioAbuns() throws ParseException, MinhaExcecao {
 		Albun albun1 = new Albun(51, 2, sdf.parse("02/11/2016"),new Date(),10);
 		Albun albun2 = new Albun(52, 2, sdf.parse("10/11/2016"),new Date(),20);
 		Albun albun3 = new Albun(53, 2, sdf.parse("31/12/2016"),new Date(),5);
@@ -51,15 +57,10 @@ public class Relatorio {
 		albuns.add(albun3);
 		
 		for (Albun a : albuns) {
-			System.out.println(a + "Preço: " + a.getPrecoProduto());
+			System.out.println(a + "Preco: " + a.getPrecoProduto());
 		}
 		
 	}
 
-	private static void relatorioCalendarios() throws ParseException {
-	}
-
-	private static void relatorioQuadros() throws ParseException {
-	}
 
 }

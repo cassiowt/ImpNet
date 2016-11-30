@@ -2,12 +2,14 @@ package com.impnet.model;
 
 import java.util.Date;
 
+import com.impnet.apl.MinhaExcecao;
+
 public class Calendario extends Foto {
-	public static final float PRECO_UNITARIO_ =  5.00f;
+	public static final float PRECO_UNITARIO_ = 5.00f;
 	private int numeroPaginas;
 	private Date periodoInicial;
 	private Date periodoFinal;
-	
+
 	public Calendario() {
 	}
 
@@ -22,7 +24,7 @@ public class Calendario extends Foto {
 	public static float getPrecoUnitarioCalendario() {
 		return PRECO_UNITARIO;
 	}
-	
+
 	public int getNumeroPaginas() {
 		return numeroPaginas;
 	}
@@ -49,15 +51,19 @@ public class Calendario extends Foto {
 
 	@Override
 	public String toString() {
-		return "Calendario - Numero Paginas = " + numeroPaginas + "\n Periodo Inicial = "
-				+ periodoInicial + "\n Periodo Final = "
-				+ periodoFinal + "\n" + super.toString();
+		return "Calendario - Numero Paginas = " + numeroPaginas + "\n Periodo Inicial = " + periodoInicial
+				+ "\n Periodo Final = " + periodoFinal + "\n" + super.toString();
 	}
 
-public float calculoPreco(float preco){
+	public float calculoPreco(float preco) throws MinhaExcecao {
+		if (preco > 0) {
+			super.precoProduto = preco * getNumeroCopias() * getNumeroPaginas();
+		} else {
+			throw new MinhaExcecao(MensagensConstantes.PRECO_MENOR_ZERO);
+		}
+		return super.getPrecoProduto();
 		
-		return preco*getNumeroCopias()*getNumeroPaginas();
-		
+
 	}
-	
+
 }
