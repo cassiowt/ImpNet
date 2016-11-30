@@ -1,5 +1,6 @@
 package com.impnet.bo;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
 import org.junit.AfterClass;
@@ -9,9 +10,10 @@ import org.junit.Test;
 
 import com.impnet.apl.MinhaExcecao;
 import com.impnet.model.Foto;
+import com.impnet.model.MensagensConstantes;
 
 public class TestFoto {
-	Foto foto;
+	Foto foto, fotoErrada;
 	SimpleDateFormat sdf;
 	
 	@Before
@@ -26,6 +28,7 @@ public class TestFoto {
 		 * 
 		 */
 		foto = new Foto(1, 10, sdf.parse("30/11/2016"), sdf.parse("01/11/2016"));
+		fotoErrada = new Foto(1, -10, sdf.parse("31/12/2016"), sdf.parse("30/11/2016"));
 	}
 
 
@@ -45,6 +48,19 @@ public class TestFoto {
 		Assert.assertEquals(100,foto.getPrecoProduto(),0);
 	}
 
+	@Test
+	public void testMensagemDataPedidoInvalido() throws ParseException {
+		try {
+			fotoErrada.setDataPedido(sdf.parse("31/12/2017"));
+			fotoErrada.setDataEntrega(sdf.parse("31/12/2016"));
+			Assert.fail("A mensagem deveira ser : " + MensagensConstantes.MSG_EXCEPTION + MensagensConstantes.DATA_PEDIDO_MAIOR_DATA_ENTREGA);
+		} catch (MinhaExcecao e) {
+			// Teste se a mensagem corresponde também
+			Assert.assertTrue("Mensagem do erro:", e.getMessage().equals(MensagensConstantes.MSG_EXCEPTION + MensagensConstantes.DATA_PEDIDO_MAIOR_DATA_ENTREGA));
+		}
+
+	}
+	
 	@AfterClass
 	public static void tearDown() throws Throwable {
 		System.out.println("Testes Encerrados " );

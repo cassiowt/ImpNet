@@ -10,7 +10,7 @@ public class Quadro extends Foto {
 	
 	public Quadro() {}
 
-	public Quadro(int codigo, int numeroCopias, Date dataEntrega, Date dataPedido, float tamanho) {
+	public Quadro(int codigo, int numeroCopias, Date dataEntrega, Date dataPedido, float tamanho) throws MinhaExcecao {
 		super(codigo, numeroCopias, dataEntrega, dataPedido);
 		this.tamanho = tamanho;
 	}

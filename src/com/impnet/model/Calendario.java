@@ -14,7 +14,7 @@ public class Calendario extends Foto {
 	}
 
 	public Calendario(int codigo, int numeroCopias, Date dataEntrega, Date dataPedido, int numeroPaginas,
-			Date periodoInicial, Date periodoFinal) {
+			Date periodoInicial, Date periodoFinal) throws MinhaExcecao {
 		super(codigo, numeroCopias, dataEntrega, dataPedido);
 		this.numeroPaginas = numeroPaginas;
 		this.periodoInicial = periodoInicial;

@@ -11,7 +11,7 @@ public class Albun extends Foto {
 	public Albun() {
 	}
 
-	public Albun(int codigo, int numeroCopias, Date dataEntrega, Date dataPedido, int numeroFotosAlbun) {
+	public Albun(int codigo, int numeroCopias, Date dataEntrega, Date dataPedido, int numeroFotosAlbun) throws MinhaExcecao {
 		super(codigo, numeroCopias, dataEntrega, dataPedido);
 		this.numeroFotosAlbun = numeroFotosAlbun;
 	}
